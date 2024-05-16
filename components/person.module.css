@@ -1,0 +1,19 @@
+.personList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.personList a img {
+  width: 100%;
+}
+
+.personTitle {
+  color: white;
+  font-weight: 600;
+}
+
+.personInfo {
+  color: rgba(156, 163, 175);
+}
