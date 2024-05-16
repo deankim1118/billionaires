@@ -1,6 +1,6 @@
 import Person from '@/components/person';
-
-export const API_URL = 'https://billions-api.nomadcoders.workers.dev/';
+import { convertNetWorth } from '@/components/person-info';
+import { API_URL } from './constants';
 
 const getPersons = async () => {
   const response = await fetch(API_URL);
@@ -15,11 +15,6 @@ interface personInfo {
   netWorth: number;
   industries: string[];
 }
-
-export const convertNetWorth = (number: number) => {
-  const rounded = Math.round(number / 1000);
-  return `${rounded} Billion`;
-};
 
 export default async function Home() {
   const persons = await getPersons();

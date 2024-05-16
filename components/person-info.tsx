@@ -1,9 +1,14 @@
-import { API_URL, convertNetWorth } from '@/app/page';
+import { API_URL } from '@/app/constants';
 
 export async function getPersonDetails(id: string) {
   const response = await fetch(`${API_URL}/person/${id}`);
   return response.json();
 }
+
+export const convertNetWorth = (number: number) => {
+  const rounded = Math.round(number / 1000);
+  return `${rounded} Billion`;
+};
 
 export default async function PersonInfo({ id }: { id: string }) {
   const person = await getPersonDetails(id);
